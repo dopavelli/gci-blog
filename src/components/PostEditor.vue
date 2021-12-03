@@ -55,7 +55,7 @@ export default {
       lastUpdate: null,
       topics: ['General', 'Frontend', 'Backend'],
       inputMinRules: [(v) => v.length >= 3 || 'Minimum 3 characters'],
-      inputMaxRules: [(v) => v.length <= 25 || 'Maximum 25 characters'],
+      inputMaxRules: [(v) => v.length <= 30 || 'Maximum 30 characters'],
       inputMaxTextRules: [(v) => v.length <= 2500 || 'Maximum 2500 characters']
     }
   },
