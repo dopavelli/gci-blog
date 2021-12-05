@@ -1,15 +1,9 @@
 <template>
-  <div class="post">
-    <h1>POST</h1>
-    <PostEditor />
+  <div class="editor">
+    <h1>View</h1>
   </div>
 </template>
 
 <script>
-import PostEditor from '../components/PostEditor.vue'
-export default {
-  components: {
-    PostEditor
-  }
-}
+export default {}
 </script>

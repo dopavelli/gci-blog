@@ -10,6 +10,7 @@
     "app": "concurrently \"npm run json-api\" \"npm run serve\""
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "concurrently": "^6.4.0",
     "core-js": "^3.6.5",
     "json-server": "^0.17.0",

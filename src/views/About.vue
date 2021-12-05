@@ -1,15 +1,14 @@
 <template>
-  <div class="about">
-    <h1>ABOUT</h1>
-    <Test />
+  <div class="about my-5">
+  <About />
   </div>
 </template>
 
 <script>
-import Test from '../components/Test.vue'
+import About from '../components/About.vue'
 export default {
   components: {
-    Test,
+    About,
   }
 }
 </script>

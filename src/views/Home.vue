@@ -1,15 +1,53 @@
 <template>
-<div class="home">home page
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, minima ipsa! Quos est tempore esse! Debitis consequatur tempora iusto voluptatum!</p>
-</div>
+  <div class="container">
+    <v-row justify="center">
+    <v-divider></v-divider>
+    <v-alert color="80d0c7cc">
+      <span class="mx-5">
+          <p>&nbsp; &nbsp; This is a basic SPA (Single Page Application) made with Vue.js.</p>
+          <p>&nbsp; &nbsp; This is a basic SPA (Single Page Application) made with Vue.js.</p>
+            
+    <v-list-item>
+      <v-list-item-content>
+        <v-list-item-title><b>vue-router</b> for routing</v-list-item-title>
+        <v-list-item-title><b>vuex</b> for state management</v-list-item-title>
+        <v-list-item-title><b>vuetify</b> for </v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+    <v-list-item>
+      <v-list-item-content>
+        <v-list-item-title><b>vue-router</b> for routing</v-list-item-title>
+        <v-list-item-title><b>vuex</b> for state management</v-list-item-title>
+        <v-list-item-title><b>vuetify</b> for </v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+
+
+        <br><br>
+
+
+
+          Hello,
+
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus
+          obcaecati eligendi reprehenderit nobis nostrum iste possimus beatae
+          fuga laborum praesentium?
+      </span>
+    </v-alert>
+    </v-row>
+  </div>
 </template>
 
 <script>
+export default {
+  name: 'Home',
 
-  export default {
-    name: 'Home',
-
-    components: {
-    },
-  }
+  components: {},
+}
 </script>
+
+<style scoped>
+.gap {
+  width: 100px;
+}
+</style>

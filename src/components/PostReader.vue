@@ -8,10 +8,9 @@
         </v-btn>
       </template>
     </v-snackbar>
-
-    <v-form ref="postForm" class="px-2">
-      <v-layout row wrap class="mb-3 justify-space-between">
-        <v-flex xs12 class="mb-2">
+    <v-form class="px-3" ref="postForm">
+      <v-layout row class="mb-3 justify-space-between">
+        <v-flex sm12>
           <v-text-field
             label="Title"
             v-model="title"
@@ -19,7 +18,7 @@
           ></v-text-field>
         </v-flex>
 
-        <v-flex xs12 class="mb-2">
+        <v-flex sm4>
           <v-text-field
             label="Author"
             v-model="author"
@@ -27,7 +26,7 @@
           ></v-text-field>
         </v-flex>
 
-        <v-flex xs12 class="mb-2">
+        <v-flex sm4>
           <v-select
             v-model="topic"
             :items="topics"
@@ -36,7 +35,7 @@
           ></v-select>
         </v-flex>
 
-        <v-flex xs12 class="mb-2">
+        <v-flex sm12>
           <v-textarea
             no-resize
             auto-grow
@@ -46,8 +45,8 @@
           ></v-textarea>
         </v-flex>
 
-        <v-btn @click="onSubmit" class="teal mx-2 mt-4" :loading="loading"
-          >SAVE</v-btn
+        <v-btn @click="onSubmit" class="success mx-2 mt-4" :loading="loading"
+          >Submit</v-btn
         >
         <v-btn @click="clearForm" class="mx-2 mt-4">Clear</v-btn>
       </v-layout>
@@ -90,7 +89,6 @@ export default {
 
         this.loading = false
         this.info = true
-        this.$router.push('/posts')
       }
     },
     async fetchPostTopics() {

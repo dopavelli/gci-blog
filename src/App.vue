@@ -1,10 +1,8 @@
 <template>
   <v-app>
     <Navbar />
-    <v-main class="justify-center">
-      <v-container class="mx-3 mb-3">
-        <router-view></router-view>
-      </v-container>
+    <v-main>
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
@@ -18,8 +16,6 @@ export default {
     Navbar,
   },
 
-  data: () => ({
-    //
-  }),
+  data: () => ({}),
 }
 </script>
