@@ -40,10 +40,10 @@
             <v-icon icon v-else color="grey">mdi-thumb-up</v-icon>
           </v-btn>
           <v-btn icon>
-            <PopupEdit :post="post" />
+            <PopupReadEdit :post="post" />
           </v-btn>
           <v-btn icon>
-            <PopupDelete :id="post.id" />
+            <PopupReadDelete :id="post.id" />
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -59,13 +59,13 @@
 </template>
 
 <script>
-import PopupDelete from '../components/PopupDelete.vue'
-import PopupEdit from '../components/PopupEdit.vue'
+import PopupReadDelete from '../components/PopupReadDelete.vue'
+import PopupReadEdit from '../components/PopupReadEdit.vue'
 import { mapActions } from 'vuex'
 export default {
   components: {
-    PopupDelete,
-    PopupEdit,
+    PopupReadDelete,
+    PopupReadEdit,
   },
   data() {
     return {
@@ -88,9 +88,6 @@ export default {
       const m = date.getMonth()
       const y = date.getFullYear()
       return `last updated: ${d}/${m + 1}/${y}`
-    },
-    updateUI() {
-      this.post = this.$store.getters.post
     },
   },
   created() {

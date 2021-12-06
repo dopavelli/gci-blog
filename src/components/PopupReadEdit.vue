@@ -113,6 +113,7 @@ export default {
         this.loading = false
         this.popup = false
         this.info = true
+        this.$router.push('/posts') // @TODO #2: need a better solution
       }
     },
     async fetchPostTopics() {
@@ -127,6 +128,6 @@ export default {
   },
   created() {
     this.fetchPostTopics()
-  }
+  },
 }
 </script>
