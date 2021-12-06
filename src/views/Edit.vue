@@ -1,14 +1,14 @@
 <template>
   <div class="mt-5">
-    <PostEditor />
+    <PostEdit />
   </div>
 </template>
 
 <script>
-import PostEditor from '../components/PostEditor.vue'
+import PostEdit from '../components/PostEdit.vue'
 export default {
   components: {
-    PostEditor
+    PostEdit
   }
 }
 </script>

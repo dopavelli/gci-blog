@@ -6,7 +6,11 @@
       <span class="mx-5">
           <p>&nbsp; &nbsp; This is a basic SPA (Single Page Application) made with Vue.js.</p>
           <p>&nbsp; &nbsp; This is a basic SPA (Single Page Application) made with Vue.js.</p>
-            
+            https://www.pexels.com/photo/pagoda-in-gray-scale-shot-301614/
+
+
+Pagoda in Gray Scale Shot Pixabay
+
     <v-list-item>
       <v-list-item-content>
         <v-list-item-title><b>vue-router</b> for routing</v-list-item-title>
