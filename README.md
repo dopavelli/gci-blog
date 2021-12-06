@@ -1,18 +1,18 @@
 # GCI - Simple Blogging Application
-This project is a basic Single Page Application for made with Vue.js.
+This project is a basic Single Page Application made with Vue.js.
 
-## SCRIPTS for running the app
+## SCRIPTs for running the app locally
 ```
 npm install
 ```
+then
 ```
 npm run app
 ```
-or
+or run these two commands in separated terminals:
 ```
 npm run json-api
 ```
-and
 ```
 npm run serve
 ```
@@ -28,19 +28,17 @@ npm run serve
 - Scalability
 
 ### TechStack:
-Vue.js (2.6.11)
-Vuetify (2.4.0)
-Vue-router (3.2.0)
-Vuex (3.4.0)
-Json-server (0.17.0)
-Axios (0.24.0)
-Concurrently (6.4.0)
+- Vue.js (2.6.11)
+- Vuetify (2.4.0)
+- Vue-router (3.2.0)
+- Vuex (3.4.0)
+- Json-server (0.17.0)
+- Axios (0.24.0)
+- Concurrently (6.4.0)
 
-### Resources:
+### Media Resources Used:
 https://picsum.photos/1920/1080?random
-- background pictures for navigation
 https://www.pexels.com/photo/pagoda-in-gray-scale-shot-301614
-- image in About section
 
 ### Contact:
 https://www.linkedin.com/in/dopavel/
