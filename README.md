@@ -37,7 +37,7 @@ npm run serve
 - Concurrently (6.4.0)
 
 ### Media Resources Used:
-https://picsum.photos/1920/1080?random
+https://picsum.photos/1920/1080?random  
 https://www.pexels.com/photo/pagoda-in-gray-scale-shot-301614
 
 ### Contact:
