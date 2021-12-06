@@ -9,7 +9,7 @@
       <v-card class="mx-auto" max-width="90%" min-width="60%">
         <v-card-title>
           <div class="text-h4 mx-auto">
-{{ post.title }}
+            {{ post.title }}
           </div>
         </v-card-title>
         <div class="text-h6 font-weight-regular grey--text ml-5">
@@ -49,7 +49,7 @@
       </v-card>
     </v-row>
     <v-row>
-      <p>{{ post.text }}</p>
+      <p class="mb-4">{{ post.text }}</p>
     </v-row>
     <v-divider></v-divider>
     <v-btn @click="escape()" class="ma-2" outlined color="cyan">

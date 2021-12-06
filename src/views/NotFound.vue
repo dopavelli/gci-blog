@@ -1,57 +1,26 @@
 <template>
-  <div class="container">
-    <v-row justify="center">
-    <v-divider></v-divider>
-    <v-alert color="80d0c7cc">
-      <span class="mx-5">
-          <p>NOT FOUND</p>
-          <p>&nbsp; &nbsp; Main features:</p>
-            https://www.pexels.com/photo/pagoda-in-gray-scale-shot-301614/
-
-
-Pagoda in Gray Scale Shot Pixabay
-
-    <v-list-item>
-      <v-list-item-content>
-        <v-list-item-title><b>vue-router</b> for routing</v-list-item-title>
-        <v-list-item-title><b>vuex</b> for state management</v-list-item-title>
-        <v-list-item-title><b>vuetify</b> for </v-list-item-title>
-      </v-list-item-content>
-    </v-list-item>
-    <v-list-item>
-      <v-list-item-content>
-        <v-list-item-title><b>vue-router</b> for routing</v-list-item-title>
-        <v-list-item-title><b>vuex</b> for state management</v-list-item-title>
-        <v-list-item-title><b>vuetify</b> for </v-list-item-title>
-      </v-list-item-content>
-    </v-list-item>
-
-
-        <br><br>
-
-
-
-          Hello,
-
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus
-          obcaecati eligendi reprehenderit nobis nostrum iste possimus beatae
-          fuga laborum praesentium?
-      </span>
-    </v-alert>
-    </v-row>
-  </div>
+  <v-container>
+    <div class="top-offset"></div>
+        <v-alert
+          color="red"
+          elevation="24"
+          outlined
+          text
+          type="error"
+          ><center>ERROR 404: NOT FOUND</center></v-alert
+        >
+  </v-container>
 </template>
 
 <script>
 export default {
-  name: 'Home',
-
+  name: 'NotFound',
   components: {},
 }
 </script>
 
 <style scoped>
-.gap {
-  width: 100px;
+.top-offset {
+  height: 256px;
 }
 </style>

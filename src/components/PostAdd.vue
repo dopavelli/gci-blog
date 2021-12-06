@@ -9,6 +9,7 @@
       </template>
     </v-snackbar>
 
+    <div class="top-offset"></div>
     <v-form ref="postForm" class="px-2">
       <v-layout row wrap class="mb-3 justify-space-between">
         <v-flex xs12 class="mb-2">
@@ -85,7 +86,7 @@ export default {
           topic: this.topic,
           text: this.text,
           liked: false,
-          lastUpdateTS: Date.now()
+          lastUpdateTS: Date.now(),
         })
 
         this.loading = false
@@ -110,6 +111,12 @@ export default {
   },
   created() {
     this.fetchPostTopics()
-  }
+  },
 }
 </script>
+
+<style scoped>
+.top-offset {
+  height: 64px;
+}
+</style>

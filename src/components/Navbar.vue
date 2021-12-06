@@ -66,9 +66,9 @@ export default {
       sideMenu: false,
       links: [
         { icon: 'mdi-home', text: 'Home', route: '/' },
-        { icon: 'mdi-vuetify', text: 'About', route: '/about' },
-        { icon: 'mdi-view-list', text: 'Posts', route: '/posts' },
         { icon: 'mdi-message-text', text: 'New post', route: '/add' },
+        { icon: 'mdi-view-list', text: 'Posts', route: '/posts' },
+        { icon: 'mdi-vuetify', text: 'About', route: '/about' },
       ],
     }
   },
