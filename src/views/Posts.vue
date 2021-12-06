@@ -1,11 +1,17 @@
 <template>
   <div>
-    
+    <div class="top-offset"></div>
     <v-container class="my-5 mx-3">
       <v-layout row class="mb-3 my-5 d-flex justify-center mb-6">
         <v-tooltip top class="d-flex">
           <template v-slot:activator="{ on, attrs }">
-            <v-btn small @click="sortBy('title')" v-bind="attrs" v-on="on" class="mx-1 my-1">
+            <v-btn
+              small
+              @click="sortBy('title')"
+              v-bind="attrs"
+              v-on="on"
+              class="mx-1 my-1"
+            >
               <v-icon left small color="grey">mdi-sort</v-icon>
               <span class="caption">title</span>
             </v-btn>
@@ -15,7 +21,13 @@
 
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
-            <v-btn small @click="sortBy('author')" v-bind="attrs" v-on="on" class="mx-1 my-1">
+            <v-btn
+              small
+              @click="sortBy('author')"
+              v-bind="attrs"
+              v-on="on"
+              class="mx-1 my-1"
+            >
               <v-icon left small color="grey">mdi-sort</v-icon>
               <span class="caption">author</span>
             </v-btn>
@@ -25,7 +37,13 @@
 
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
-            <v-btn small @click="sortBy('topic')" v-bind="attrs" v-on="on" class="mx-1 my-1">
+            <v-btn
+              small
+              @click="sortBy('topic')"
+              v-bind="attrs"
+              v-on="on"
+              class="mx-1 my-1"
+            >
               <v-icon left small color="grey">mdi-sort</v-icon>
               <span class="caption">topic</span>
             </v-btn>
@@ -76,16 +94,21 @@
             <v-card-title
               >{{ post.title }} <v-spacer />
 
-            <div v-if="post.topic === 'Frontend'">
-            <v-chip class="ma-2" text-color="black" color="cyan"> {{ post.topic }} </v-chip>
-            </div>
-            <div v-if="post.topic === 'Backend'">
-            <v-chip class="ma-2" text-color="black" color="teal"> {{ post.topic }} </v-chip>
-            </div>
-            <div v-if="post.topic === 'General'">
-            <v-chip class="ma-2" text-color="black"> {{ post.topic }} </v-chip>
-            </div>
-
+              <div v-if="post.topic === 'Frontend'">
+                <v-chip class="ma-2" text-color="black" color="cyan">
+                  {{ post.topic }}
+                </v-chip>
+              </div>
+              <div v-if="post.topic === 'Backend'">
+                <v-chip class="ma-2" text-color="black" color="teal">
+                  {{ post.topic }}
+                </v-chip>
+              </div>
+              <div v-if="post.topic === 'General'">
+                <v-chip class="ma-2" text-color="black">
+                  {{ post.topic }}
+                </v-chip>
+              </div>
             </v-card-title>
 
             <v-card-subtitle>
@@ -106,17 +129,17 @@
               </template>
 
               <v-spacer></v-spacer>
-              <v-btn icon @click="toggleLike(post)">
+              <v-btn icon @click="toggleLikePost(post)">
                 <v-icon icon v-if="post.liked" color="cyan"
                   >mdi-thumb-up</v-icon
                 >
                 <v-icon icon v-else color="grey">mdi-thumb-up</v-icon>
               </v-btn>
-              <v-btn icon @click="editPost(post.id)">
-                <v-icon color="grey">mdi-pencil</v-icon>
+              <v-btn icon>
+                <PopupEdit :post="post" />
               </v-btn>
               <v-btn icon>
-                <Popup :id="post.id" />
+                <PopupDelete :id="post.id" />
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -127,29 +150,28 @@
 </template>
 
 <script>
-import Popup from '../components/Popup.vue'
-import axios from 'axios'
-import { mapMutations, mapActions, mapGetters } from 'vuex'
+import PopupDelete from '../components/PopupDelete.vue'
+import PopupEdit from '../components/PopupEdit.vue'
+import { mapActions, mapGetters, mapMutations } from 'vuex'
 
 export default {
   components: {
-    Popup,
+    PopupDelete,
+    PopupEdit,
   },
   data() {
-    return {
-      showReadingModal: false,
-    }
+    return {}
   },
   methods: {
-    ...mapActions(['fetchPosts', 'fetchPost']),
-    ...mapMutations(['loadPost']),
+    ...mapActions(['fetchPosts', 'toggleLikePost']),
     ...mapGetters(['listPosts']),
+    ...mapMutations(['loadPost']),
     formatLastUpdate(ts) {
       const date = new Date(ts)
       const d = date.getDate()
       const m = date.getMonth()
       const y = date.getFullYear()
-      return `last update: ${d}/${m + 1}/${y}`
+      return `last updated: ${d}/${m + 1}/${y}`
     },
     sortBy(param) {
       this.posts.sort((a, b) => (a[param] < b[param] ? -1 : 1))
@@ -157,31 +179,9 @@ export default {
     sortByNew(param) {
       this.posts.sort((a, b) => (a[param] > b[param] ? -1 : 1))
     },
-
-    async getPost(id) {
-      try {
-        const response = await axios.get(`http://localhost:5000/posts/${id}`)
-        return response.data
-
-      } catch (error) {
-        console.log(error)
-      }
-    },
-    async readPost(post) {
-      const x = await this.getPost(post.id)
-      console.log(x)
-
-    },
-
-    async toggleLike(post) {
-      await axios.put(`http://localhost:5000/posts/${post.id}`, {...post, liked: !post.liked})
-      await this.fetchPosts()
-    },
-
-    async editPost(id) {
-      this.fetchPost(id)
-      
-
+    readPost(post) {
+      this.loadPost(post)
+      this.$router.push('/read')
     },
   },
   computed: {
@@ -189,7 +189,12 @@ export default {
   },
   created() {
     this.fetchPosts()
-
   },
 }
 </script>
+
+<style scoped>
+.top-offset {
+  height: 32px;
+}
+</style>

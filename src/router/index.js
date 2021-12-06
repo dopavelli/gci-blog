@@ -2,24 +2,18 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from '../views/Home.vue'
-import Post from '../views/Post.vue'
+import Read from '../views/Read.vue'
 import Posts from '../views/Posts.vue'
 import Add from '../views/Add.vue'
-import Edit from '../views/Edit.vue'
 import About from '../views/About.vue'
+import NotFound from '../views/NotFound.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/post',
-    name: 'Post',
-    component: Post
   },
   {
     path: '/posts',
@@ -27,20 +21,30 @@ const routes = [
     component: Posts
   },
   {
+    path: '/read',
+    name: 'Read',
+    component: Read
+  },
+  {
     path: '/add',
     name: 'Add',
     component: Add
   },
   {
-    path: '/edit',
-    name: 'Edit',
-    component: Edit
-  },
-  {
     path: '/about',
     name: 'About',
     component: About
-  }
+  },
+  {
+    path: '/404',
+    name: 'NotFound',
+    component: NotFound
+  },
+  {
+    path: '*',
+    name: '404',
+    redirect: '/404'
+  },
 ]
 
 const router = new VueRouter({

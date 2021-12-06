@@ -1,6 +1,7 @@
 <template>
   <nav>
     <v-app-bar
+      fixed
       dark
       color="#fcb69f"
       src="https://picsum.photos/1920/1080?random"

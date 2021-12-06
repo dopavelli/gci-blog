@@ -65,7 +65,7 @@ export default {
       author: '',
       topic: 'General',
       text: '',
-      lastUpdate: null,
+      lastUpdateTS: null,
       topics: [],
       inputMinRules: [(v) => v.length >= 3 || 'Minimum 3 characters'],
       inputMaxRules: [(v) => v.length <= 30 || 'Maximum 30 characters'],
@@ -84,8 +84,8 @@ export default {
           author: this.author,
           topic: this.topic,
           text: this.text,
-          lastUpdateTS: Date.now(),
-          liked: null
+          liked: false,
+          lastUpdateTS: Date.now()
         })
 
         this.loading = false

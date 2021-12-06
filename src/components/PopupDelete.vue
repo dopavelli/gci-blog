@@ -9,7 +9,7 @@
       </template>
     </v-snackbar>
 
-    <v-dialog v-model="popup" persistent max-width="400">
+    <v-dialog v-model="popup" max-width="400">
       <template v-slot:activator="{ on, attrs }">
         <v-btn icon v-bind="attrs" v-on="on"
           ><v-icon color="grey">mdi-delete</v-icon></v-btn
@@ -17,21 +17,17 @@
       </template>
 
       <v-card>
-        <v-card-title class="text-h5"> DELETE </v-card-title>
+        <v-card-title class="text-h5">DELETE POST</v-card-title>
         <v-card-text>Are you sure you want to delete this post?</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="teal" text @click="popup = false">
-            Cancel
-          </v-btn>
           <v-btn
             color="teal darken-1"
             text
             @click="onDelete(id)"
             :loading="loading"
-          >
-            Delete
-          </v-btn>
+          > Delete </v-btn>
+          <v-btn color="teal" text @click="popup = false"> Cancel </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -53,8 +49,8 @@ export default {
     async onDelete(id) {
       this.loading = true
       this.deletePost(id)
-      this.popup = false
       this.loading = false
+      this.popup = false
       this.info = true
     },
   },
